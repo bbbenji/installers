@@ -270,6 +270,11 @@ nginxConfigure()
     #+------------------------------------------------------------------------+
     systemctl enable nginx \
     && systemctl start nginx
+
+    #+------------------------------------------------------------------------+
+    #+ Copy NGINX UFW rules
+    #+------------------------------------------------------------------------+
+    cp ${currentPath}/ufw/nginx /etc/ufw/applications.d/
 }
 
 nginxCleanup()
